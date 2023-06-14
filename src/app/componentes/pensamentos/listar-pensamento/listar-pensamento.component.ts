@@ -18,6 +18,11 @@ export class ListarPensamentoComponent {
       autoria: "Componente filho",
       modelo: 'modelo1'
     },
+    {
+      conteudo: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, maxime? Excepturi deserunt in quia autem aliquam, nam magnam, temporibus doloremque qui quisquam natus et obcaecati impedit quod asperiores, sequi quos. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, maxime? Excepturi deserunt in quia autem aliquam, nam magnam, temporibus doloremque qui quisquam natus et obcaecati impedit quod asperiores, sequi quos.",
+      autoria: "Componente filho",
+      modelo: 'modelo2'
+    },
   ];
 
 }
