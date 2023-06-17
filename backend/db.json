@@ -1,21 +1,15 @@
 {
   "pensamentos": [
     {
-      "id": 2,
-      "conteudo": "Que bom que você viajou!",
-      "autoria": "Josh Silva",
-      "modelo": "modelo3"
-    },
-    {
-      "conteudo": "Gostaria de ser herdeira!",
+      "conteudo": "Gostaria de ser herdeira! Rica milionária",
       "autoria": "Yone",
-      "modelo": "modelo3",
+      "modelo": "modelo1",
       "id": 3
     },
     {
-      "conteudo": "Aprender AngularJS",
+      "conteudo": "Aprender Angular",
       "autoria": "Porque sim",
-      "modelo": "modelo1",
+      "modelo": "modelo3",
       "id": 4
     }
   ]
