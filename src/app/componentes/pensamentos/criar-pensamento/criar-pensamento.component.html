@@ -118,9 +118,12 @@
     </div>
     <div class="acoes">
       <button
-        class="botao"
+        [disabled]="!formulario.valid"
         (click)="criarPensamento()"
-      >Salvar</button>
+        [ngClass]="habilitarBotao()"
+      >
+        Salvar
+      </button>
       <button
         class="botao"
         (click)="cancelarPensamento()"
