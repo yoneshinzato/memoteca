@@ -8,10 +8,11 @@ import { PensamentoService } from '../pensamento.service';
   styleUrls: ['./listar-pensamento.component.css']
 })
 export class ListarPensamentoComponent implements OnInit {
+  listaPensamentos: Pensamento[] = []
   paginaAtual: number = 1
-  constructor(private service: PensamentoService) {
+  haMaisPensamentos: boolean = true;
 
-  }
+  constructor(private service: PensamentoService) { }
 
   ngOnInit(): void {
     this.service.listar(this.paginaAtual).subscribe((listaPensamentos) => {
@@ -19,6 +20,15 @@ export class ListarPensamentoComponent implements OnInit {
     })
   }
 
-  listaPensamentos: Pensamento[] = []
+  carregarMaisPensamentos(): void {
+    this.service.listar(++this.paginaAtual)
+      .subscribe(listaPensamentos => {
+        this.listaPensamentos.push(...listaPensamentos);
+        if(!listaPensamentos.length) {
+          this.haMaisPensamentos = false
+        }
+      })
+  }
+
 
 }
