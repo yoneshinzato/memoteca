@@ -31,9 +31,10 @@ export class EditarPensamentoComponent implements OnInit {
         autoria: [pensamento.autoria, Validators.compose([
           Validators.required,
           Validators.minLength(3),
- 
+
         ])],
-        modelo: [pensamento.modelo]
+        modelo: [pensamento.modelo],
+        favorito: [pensamento.favorito]
         })
       })
 
