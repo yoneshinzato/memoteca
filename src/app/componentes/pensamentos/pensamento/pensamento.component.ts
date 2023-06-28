@@ -1,12 +1,13 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Pensamento } from '../pensamento.interface';
+import { PensamentoService } from '../pensamento.service';
 
 @Component({
   selector: 'app-pensamento',
   templateUrl: './pensamento.component.html',
   styleUrls: ['./pensamento.component.css']
 })
-export class PensamentoComponent {
+export class PensamentoComponent implements OnInit {
 
 @Input() pensamento: Pensamento = {
     id: 0,
@@ -14,6 +15,12 @@ export class PensamentoComponent {
     autoria: 'Nay',
     modelo: 'modelo3',
     favorito: false
+}
+
+constructor(private service: PensamentoService){}
+
+ngOnInit(): void {
+
 }
 
 larguraPensamento(): string {
@@ -28,6 +35,10 @@ mudaIconeFavorito(): string {
     return 'inativo'
   }
   return 'ativo'
+}
+
+atualizarFavoritos() {
+  this.service.mudarFavorito(this.pensamento).subscribe()
 }
 
 }
