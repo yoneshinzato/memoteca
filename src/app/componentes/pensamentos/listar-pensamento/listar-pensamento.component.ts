@@ -14,7 +14,7 @@ export class ListarPensamentoComponent implements OnInit {
   filtro: string = ''
   favoritos: boolean = false
   listaFavoritos: Pensamento[] = []
-
+  titulo: string = "Meu Mural"
   constructor(private service: PensamentoService) { }
 
   ngOnInit(): void {
@@ -38,6 +38,7 @@ export class ListarPensamentoComponent implements OnInit {
     this.service.listar(this.paginaAtual, this.filtro, this.favoritos).subscribe(listaFavoritos => {
       this.listaPensamentos = listaFavoritos;
       this.listaFavoritos = listaFavoritos
+      this.titulo = "Meus Favoritos"
     })
   }
 
