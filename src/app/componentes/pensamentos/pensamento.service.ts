@@ -37,6 +37,20 @@ editar(pensamento: Pensamento): Observable<Pensamento> {
   return this.http.put<Pensamento>(url, pensamento)
 }
 
+listarPensamentosFavoritos(pagina: number, filtro: string): Observable<Pensamento[]> {
+  const itensPorPagina = 6
+
+    let params = new HttpParams()
+      .set("_page", pagina)
+      .set("_limit", itensPorPagina)
+      .set("favorito", true)
+
+      if(filtro.trim().length > 2) {
+        params = params.set("q", filtro)
+      }
+    return this.http.get<Pensamento[]>(this.API, { params })
+}
+
 mudarFavorito(pensamento: Pensamento): Observable<Pensamento> {
   pensamento.favorito = !pensamento.favorito
  return this.editar(pensamento); //refatorado
